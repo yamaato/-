@@ -1,31 +1,21 @@
-# Streamlitライブラリをインポート
 import streamlit as st
 
-# ページ設定（タブに表示されるタイトル、表示幅）
-st.set_page_config(page_title="タイトル", layout="wide")
+# アプリケーションのタイトル
+st.title('旅行先の国を決めるアプリ')
 
-# タイトルを設定
-st.title('Streamlitのサンプルアプリ')
+# ユーザーに質問を表示し、選択肢を提供
+country = st.selectbox('どんな国に行きたいですか？', ['日本', 'イタリア', 'フランス', 'アメリカ'])
 
-# テキスト入力ボックスを作成し、ユーザーからの入力を受け取る
-user_input = st.text_input('あなたの名前を入力してください')
+# ユーザーの選択に基づいて情報を表示
+if country == '日本':
+    st.write('日本は文化が豊かで美しい国です。')
+elif country == 'イタリア':
+    st.write('イタリアは美食と歴史が豊かな国です。')
+elif country == 'フランス':
+    st.write('フランスは芸術と文化が息づく国です。')
+else:
+    st.write('アメリカは多様性に富んだ国です。')
 
-# ボタンを作成し、クリックされたらメッセージを表示
-if st.button('挨拶する'):
-    if user_input:  # 名前が入力されているかチェック
-        st.success(f'🌟 こんにちは、{user_input}さん! 🌟')  # メッセージをハイライト
-    else:
-        st.error('名前を入力してください。')  # エラーメッセージを表示
-
-# スライダーを作成し、値を選択
-number = st.slider('好きな数字（10進数）を選んでください', 0, 100)
-
-# 補足メッセージ
-st.caption("十字キー（左右）でも調整できます。")
-
-# 選択した数字を表示
-st.write(f'あなたが選んだ数字は「{number}」です。')
-
-# 選択した数値を2進数に変換
-binary_representation = bin(number)[2:]  # 'bin'関数で2進数に変換し、先頭の'0b'を取り除く
-st.info(f'🔢 10進数の「{number}」を2進数で表現すると「{binary_representation}」になります。 🔢')  # 2進数の表示をハイライト
+# アプリケーションの実行
+if __name__ == '__main__':
+    st.write('アプリを実行するには、ターミナルで "streamlit run your_script.py" を実行してください。')
