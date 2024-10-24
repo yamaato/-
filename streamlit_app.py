@@ -1,21 +1,42 @@
-import streamlit as st
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ランダム人選択アプリ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #result {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>ランダム人選択アプリ</h1>
+    <textarea id="names" rows="10" cols="30" placeholder="名前を1行ずつ入力してください"></textarea><br><br>
+    <button onclick="selectRandomPerson()">ランダムに選ぶ</button>
+    <div id="result"></div>
 
-# アプリケーションのタイトル
-st.title('マッチングアプリ')
-#　名前を入力させる
-user_input = st.text_input('あなたの名前を入力しください')
+    <script>
+        function selectRandomPerson() {
+            const namesText = document.getElementById('names').value;
+            const namesArray = namesText.split('\n').filter(name => name.trim() !== '');
+            
+            if (namesArray.length === 0) {
+                document.getElementById('result').innerText = '名前を入力してください';
+                return;
+            }
 
-# ユーザーに質問を表示し、選択肢を提供
-sex = st.selectbox('男子ですか、女子ですか', ['男子','女子'])
-
-# ユーザーの選択に基づいて情報を表示
-if sex == '男子':
-    
-    st.write('お勧めの異性はさんです')
-elif sex  == '女子':
-    st.write('お勧めの異性はさんです')
-
-
-# アプリケーションの実行
-if __name__ == '__main__':
-    st.write('アプリを実行するには、ターミナルで "streamlit run your_script.py" を実行してください。')
+            const randomIndex = Math.floor(Math.random() * namesArray.length);
+            const selectedPerson = namesArray[randomIndex];
+            
+            document.getElementById('result').innerText = `選ばれた人: ${selectedPerson}`;
+        }
+    </script>
+</body>
+</html>
