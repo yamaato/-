@@ -1,4 +1,4 @@
-import streamlit as st
+import random as st
 aaa = ['カンナ','スズ']
 bbb = ['大和','そら']
 # アプリケーションのタイトル
