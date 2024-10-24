@@ -1,4 +1,4 @@
-import streamlit_app
+import streamlit as st
 aaa = ['カンナ','スズ']
 bbb = ['大和','そら']
 # アプリケーションのタイトル
