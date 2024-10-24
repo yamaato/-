@@ -9,14 +9,12 @@ user_input = st.text_input('あなたの名前を入力しください')
 sex = st.selectbox('男子ですか、女子ですか', ['男子','女子'])
 
 # ユーザーの選択に基づいて情報を表示
-if country == '日本':
-    st.write('日本は文化が豊かで美しい国です。')
-elif country == 'イタリア':
-    st.write('イタリアは美食と歴史が豊かな国です。')
-elif country == 'フランス':
-    st.write('フランスは芸術と文化が息づく国です。')
-else:
-    st.write('アメリカは多様性に富んだ国です。')
+if sex == '男子':
+    
+    st.write('お勧めの異性は'++'さんです')
+elif sex  == '女子':
+    st.write('お勧めの異性は'++'さんです')
+
 
 # アプリケーションの実行
 if __name__ == '__main__':
