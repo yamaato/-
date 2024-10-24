@@ -9,6 +9,7 @@ user_input = st.text_input('あなたの名前を入力しください')
 gender = st.radio("性別を選択してください", ["男性", "女性"])
 
 # ユーザーの選択に基づいて情報を表示
+if st.button("クリック"):
 if gender == '男性':
     
     st.write('お勧めの異性はさんです')
