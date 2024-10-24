@@ -11,11 +11,11 @@ gender = st.radio("性別を選択してください", ["男性", "女性"])
 # ユーザーの選択に基づいて情報を表示
 if st.button("クリック"):
     st.write("ボタンがクリックされました!")
-if gender == '男性':
+    if gender == '男性':
     
-    st.write('お勧めの異性はさんです')
-elif gender  == '女性':
-    st.write('お勧めの異性は大和さんです')
+      st.write('お勧めの異性はさんです')
+    elif gender  == '女性':
+     st.write('お勧めの異性は大和さんです')
 
 
 # アプリケーションの実行
