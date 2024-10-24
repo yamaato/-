@@ -14,9 +14,9 @@ if st.button("クリック"):
     st.write("ボタンがクリックされました!")
     if gender == '男性':
     
-      st.write('お勧めの異性'+str(random[aaa])+'はさんです')
+      st.write('お勧めの異性吉田さんです')
     elif gender  == '女性':
-     st.write('お勧めの異性は'+str(random[bbb])+'さんです')
+     st.write('お勧めの異性は大和さんです')
 
 
 # アプリケーションの実行
