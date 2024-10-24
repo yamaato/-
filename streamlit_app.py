@@ -1,5 +1,6 @@
 import streamlit as st
-
+aaa = ['カンナ','スズ']
+bbb = ['大和','そら]
 # アプリケーションのタイトル
 st.title('マッチングアプリ')
 #　名前を入力させる
@@ -13,9 +14,9 @@ if st.button("クリック"):
     st.write("ボタンがクリックされました!")
     if gender == '男性':
     
-      st.write('お勧めの異性はさんです')
+      st.write('お勧めの異性'+str(random[aaa])+'はさんです')
     elif gender  == '女性':
-     st.write('お勧めの異性は大和さんです')
+     st.write('お勧めの異性は'+str(random[bbb])+'さんです')
 
 
 # アプリケーションの実行
